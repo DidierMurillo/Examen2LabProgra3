@@ -9,8 +9,11 @@ using namespace std;
 # include <vector>
 using std::vector;
 
+# include <sstream>
+using std::stringstream;
 
 int menu();
+
 int main(int argc, char const *argv[]){
 	vector<string> operaciones;
 	vector<Racional> racionales;
@@ -21,28 +24,100 @@ int main(int argc, char const *argv[]){
 	while(seleccion!=7){
 		seleccion = menu();
 		if (seleccion == 1){
-			cout<<"porfavor ingrese el numerador:";
+			cout<<"Por favor ingrese el numerador:";
 			cin>>numerador;
-			cout<<"porfavor ingrese el denominador, recuerde que no deberia de ser 0";
+			cout<<"Por favor ingrese el denominador, recuerde que no deberia de ser 0";
 			cin>>denominador;
 
-		}else if (seleccion==2){
-
-		}else if (seleccion==3){
-
-		}else if (seleccion==4){
-
-		}else if (seleccion==5){
-
-		}else if (seleccion==6){
-
+			Racional temp(numerador,denominador);
+			racionales.push_back(temp);
 		}
+		else if (seleccion==2){
+			int position1, position2;
+			for (int i = 0; i < racionales.size(); ++i)	{
+				cout << i+1 << ". " << racionales[i] << endl;
+			}
+			cout << "Elija posicion primer operando: ";
+			cin >> position1;
+			position1--;
+			cout << "Elija posicion segundo operando: ";
+			cin >> position2;
+			position2--;
 
+			Racional temp;
+			temp = racionales[position1] + racionales[position2];
+			cout << "Resultado: " << temp << endl;
 
+			stringstream ss;
+			ss << racionales[position1] << " + " << racionales[position2] << " = " << temp;
+			operaciones.push_back(ss.str());
+		}
+		else if (seleccion==3){
+			int position1, position2;
+			for (int i = 0; i < racionales.size(); ++i)	{
+				cout << i+1 << ". " << racionales[i] << endl;
+			}
+			cout << "Elija posicion primer operando: ";
+			cin >> position1;
+			position1--;
+			cout << "Elija posicion segundo operando: ";
+			cin >> position2;
+			position2--;
+
+			Racional temp;
+			temp = racionales[position1] - racionales[position2];
+			cout << "Resultado: " << temp << endl;
+
+			stringstream ss;
+			ss << racionales[position1] << " - " << racionales[position2] << " = " << temp;
+			operaciones.push_back(ss.str());
+		}
+		else if (seleccion==4){
+			int position1, position2;
+			for (int i = 0; i < racionales.size(); ++i)	{
+				cout << i+1 << ". " << racionales[i] << endl;
+			}
+			cout << "Elija posicion primer operando: ";
+			cin >> position1;
+			position1--;
+			cout << "Elija posicion segundo operando: ";
+			cin >> position2;
+			position2--;
+
+			Racional temp;
+			temp = racionales[position1] * racionales[position2];
+			cout << "Resultado: " << temp << endl;
+
+			stringstream ss;
+			ss << racionales[position1] << " * " << racionales[position2] << " = " << temp;
+			operaciones.push_back(ss.str());
+		}
+		else if (seleccion==5){
+			int position1, position2;
+			for (int i = 0; i < racionales.size(); ++i)	{
+				cout << i+1 << ". " << racionales[i] << endl;
+			}
+			cout << "Elija posicion primer operando: ";
+			cin >> position1;
+			position1--;
+			cout << "Elija posicion segundo operando: ";
+			cin >> position2;
+			position2--;
+
+			Racional temp;
+			temp = racionales[position1] / racionales[position2];
+			cout << "Resultado: " << temp << endl;
+
+			stringstream ss;
+			ss << racionales[position1] << " / " << racionales[position2] << " = " << temp;
+			operaciones.push_back(ss.str());
+		}
+		else if (seleccion==6){
+			for (int i = 0; i < operaciones.size(); ++i){
+				cout << i+1 << operaciones[i] << endl;
+			}
+		}
 	}
-
-
-
 	
 	return 0;
 }
