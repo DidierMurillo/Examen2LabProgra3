@@ -28,10 +28,17 @@ using std::abs;
     }
     Racional::Racional(int numerador, int denominador){
         this->numerador=numerador;
-        if(denominador != 0)
+        if(denominador != 0){
             this->denominador=denominador;
-        else
+            if(denominador < 0){
+                this->denominador*=-1;
+                this->numerador*=-1;
+            }
+        }
+        else{
             this->denominador=1;
+            throw "Floating point exception.";
+        }
         simplificar();
     }
     string Racional::toString()const{
