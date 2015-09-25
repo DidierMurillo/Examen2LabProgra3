@@ -54,14 +54,14 @@ using std::abs;
         return *this;
     }
     const Racional& Racional::operator+=(const Racional& r){
-        this->denominador*= r.denominador;
         this->numerador = (this->numerador*r.denominador) + (this->denominador*r.numerador);
+        this->denominador*= r.denominador;
         simplificar();
         return *this;
     }
     const Racional& Racional::operator-=(const Racional& r){
-        this->denominador*= r.denominador;
         this->numerador = (this->numerador*r.denominador) - (this->denominador*r.numerador);
+        this->denominador*= r.denominador;
         simplificar();
         return *this;
     }
@@ -94,15 +94,15 @@ using std::abs;
         return retval;
     }
     bool Racional::operator==(Racional& r){
-	simplificar();
-	r.simplificar();
+    	simplificar();
+    	r.simplificar();
         if(this->numerador == r.numerador && this->denominador == r.denominador)
             return true;
         return false;
     }
     bool Racional::operator!=(Racional& r){
-	simplificar();
-	r.simplificar();
+    	simplificar();
+    	r.simplificar();
         if(this->numerador != r.numerador || this->denominador != r.denominador)
             return true;
         return false;
