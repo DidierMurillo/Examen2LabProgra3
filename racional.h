@@ -2,6 +2,10 @@
 #include <string>
 using std::string;
 
+#include <iostream>
+using std::istream;
+using std::ostream;
+
 class Racional{
   friend ostream& operator<<(ostream&, const Racional&); 
   friend istream& operator>>(istream&, Racional&);
