@@ -24,9 +24,9 @@ int main(int argc, char const *argv[]){
 	while(seleccion!=7){
 		seleccion = menu();
 		if (seleccion == 1){
-			cout<<"Por favor ingrese el numerador:";
+			cout<<"Por favor ingrese el numerador: ";
 			cin>>numerador;
-			cout<<"Por favor ingrese el denominador, recuerde que no deberia de ser 0";
+			cout<<"Por favor ingrese el denominador, recuerde que no deberia de ser 0: ";
 			cin>>denominador;
 
 			Racional temp(numerador,denominador);
@@ -114,7 +114,7 @@ int main(int argc, char const *argv[]){
 		}
 		else if (seleccion==6){
 			for (int i = 0; i < operaciones.size(); ++i){
-				cout << i+1 << operaciones[i] << endl;
+				cout << i+1 <<". "<< operaciones[i] << endl;
 			}
 		}
 	}
