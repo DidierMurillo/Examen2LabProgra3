@@ -3,6 +3,8 @@
 using std::string;
 
 class Racional{
+  friend ostream& operator<<(ostream&, const Racional&); 
+  friend istream& operator>>(istream&, Racional&);
   private:
   	int numerador;
   	int denominador;
